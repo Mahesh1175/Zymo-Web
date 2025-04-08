@@ -93,22 +93,22 @@ const CarDetails = ({ title }) => {
       rating: car.ratingData.rating,
       features: [
         {
-          icon: <Armchair className="m-2 w-8 h-8" />,
+          icon: <Armchair className="m-2 w-8 min-h-8" />,
           label: "Seats",
           value: car.options[2],
         },
         {
-          icon: <Car className="m-2 w-8 h-8" />,
+          icon: <Car className="m-2 w-8 min-h-8" />,
           label: "Trips",
           value: car.trips,
         },
         {
-          icon: <Fuel className="m-2 w-9 h-9" />,
+          icon: <Fuel className="m-2 w-8 min-h-8" />,
           label: "Fuel Type",
           value: car.options[1],
         },
         {
-          icon: <Joystick className="m-2 w-8 h-8" />,
+          icon: <Joystick className="m-2 w-8 min-h-8" />,
           label: "Transmission",
           value: car.options[0],
         },
@@ -127,7 +127,7 @@ const CarDetails = ({ title }) => {
           label: "Hourly Amount",
           value:
             car.source === "mychoize"
-              ? `₹${car.hourly_amount}/hr`
+              ? `₹${car.hourly_amount}`
               : car.hourly_amount,
         },
         { label: "Seats", value: car.options[2] },
@@ -139,8 +139,8 @@ const CarDetails = ({ title }) => {
             activeTab === "subscribe"
               ? "Subscription"
               : car.source === "zoomcar"
-              ? "Unlimited KMs"
-              : findPackage(car.rateBasis),
+                ? "Unlimited KMs"
+                : findPackage(car.rateBasis),
         },
         {
           label: "Available KMs",
@@ -148,8 +148,8 @@ const CarDetails = ({ title }) => {
             car.source === "zoomcar"
               ? "Unlimited KMs"
               : activeTab === "subscribe" && car.source === "mychoize"
-              ? " 3600 KMs"
-              : car.total_km[car.rateBasis],
+                ? " 3600 KMs"
+                : car.total_km[car.rateBasis],
         },
 
         {
@@ -236,9 +236,8 @@ const CarDetails = ({ title }) => {
                         className="img-scroller inline-flex transition-transform duration-700 ease-in-out"
                         style={{
                           width: `${car.image.length * 100}%`,
-                          transform: `translateX(-${
-                            (currentIndex * 100) / car.image.length
-                          }%)`,
+                          transform: `translateX(-${(currentIndex * 100) / car.image.length
+                            }%)`,
                         }}
                       >
                         {car.image.map((image, idx) => (
@@ -328,24 +327,24 @@ const CarDetails = ({ title }) => {
                   </div>
 
                   {/* Key Features */}
-                  <div className="grid grid-cols-2 gap-4 mb-8">
+                  <div className="grid grid-cols-2 gap-2 mb-8 text-md">
                     {car.features.map((feature, idx) => (
                       <div
                         key={idx}
-                        className="bg-darkGrey2 rounded-xl p-4 gap-2 shadow-lg flex"
+                        className="bg-darkGrey2 rounded-xl px-2 py-3 shadow-lg flex flex-col sm:flex-row items-center sm:items-start gap-2 sm:gap-3 text-center sm:text-left"
                       >
-                        {feature.icon}
+                        <div className="text-white">{feature.icon}</div>
                         <div>
-                          <p className="text-sm text-gray-400">
-                            {feature.label}
-                          </p>
-                          <p className="text-xl font-semibold">
-                            {feature.value}
-                          </p>
+                          <p className="text-gray-400">{feature.label}</p>
+                          <p className="font-semibold">{feature.value}</p>
                         </div>
                       </div>
                     ))}
                   </div>
+
+
+
+
 
                   {/* Specifications */}
                   <h2 className="text-2xl font-bold mb-4">Specifications</h2>
