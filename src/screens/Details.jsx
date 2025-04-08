@@ -326,7 +326,7 @@ const CarDetails = ({ title }) => {
                     </span>
                   </div>
 
-                  {/* Key Features */}
+                  {/* Key Features */} 
                   <div className="grid grid-cols-2 gap-2 mb-8 text-md">
                     {car.features.map((feature, idx) => (
                       <div
@@ -341,10 +341,7 @@ const CarDetails = ({ title }) => {
                       </div>
                     ))}
                   </div>
-
-
-
-
+{/* made featues secion responsive */}
 
                   {/* Specifications */}
                   <h2 className="text-2xl font-bold mb-4">Specifications</h2>

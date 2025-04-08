@@ -692,30 +692,30 @@ function BookingPage({ title }) {
         <div className="mx-auto p-6 sm:p-10 lg:p-20 space-y-5 text-white">
           {/* Header Details */}
           <div className="flex flex-col lg:flex-row flex-wrap justify-between items-center gap-5 rounded-lg p-6 shadow-sm w-full">
-  {/* Left Section */}
-  <div className="flex-1 min-w-[200px] text-xl text-center lg:text-left">
-    <h2 className="font-semibold mb-2">
-      {preBookingData.headerDetails.name}
-    </h2>
-  </div>
+            {/* Left Section */}
+            <div className="flex-1 min-w-[200px] text-xl text-center lg:text-left">
+              <h2 className="font-semibold mb-2">
+                {preBookingData.headerDetails.name}
+              </h2>
+            </div>
 
-  {/* Center Image */}
-  <div className="flex-1 flex justify-center  lg:order-none">
-    <img
-      src={preBookingData.headerDetails.image || "/placeholder.svg"}
-      alt={`${preBookingData.headerDetails.name}`}
-      className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-[20rem] h-[200px] sm:h-[280px] lg:h-[200px] object-cover rounded-lg"
-    />
-  </div>
+            {/* Center Image */}
+            <div className="flex-1 flex justify-center  lg:order-none">
+              <img
+                src={preBookingData.headerDetails.image || "/placeholder.svg"}
+                alt={`${preBookingData.headerDetails.name}`}
+                className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-[20rem] h-[200px] sm:h-[280px] lg:h-[200px] object-cover rounded-lg"
+              />
+            </div>
 
-  {/* Right Section */}
-  <div className="flex-1 flex justify-center lg:justify-end items-center gap-2 text-lg">
-    <p className="text-muted-foreground whitespace-nowrap">
-      Fulfilled by:
-    </p>
-    <img src={car.sourceImg} alt={car.source} className="h-10 bg-white p-2 rounded-md" />
-  </div>
-</div>
+            {/* Right Section */}
+            <div className="flex-1 flex justify-center lg:justify-end items-center gap-2 text-lg">
+              <p className="text-muted-foreground whitespace-nowrap">
+                Fulfilled by:
+              </p>
+              <img src={car.sourceImg} alt={car.source} className="h-10 bg-white p-2 rounded-md" />
+            </div>
+          </div>
 
 
           {/* Pickup Details */}
